@@ -3,7 +3,7 @@ import turtle
 screen = turtle.Screen()
 screen.bgcolor("light blue")
 screen.title("Catching the Turtle")
-FONT = ("Verdana", 20, "bold")
+FONT = ("Verdana", 15, "bold")
 grid_size = 10
 
 #Score Turtle
@@ -35,5 +35,10 @@ make_turtle(-10,20)
 make_turtle(0,20)
 make_turtle(10,20)
 make_turtle(20,20)
+make_turtle(-20,10)
+make_turtle(-10,10)
+make_turtle(0,10)
+make_turtle(10,10)
+make_turtle(20,10)
 
 turtle.mainloop()
