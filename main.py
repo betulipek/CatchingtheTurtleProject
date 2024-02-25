@@ -14,7 +14,7 @@ def setup_score_turtle():
     score_turtle.penup()
 
     top_height = screen.window_height() / 2
-    y = top_height * 0.80
+    y = top_height * 0.85
     score_turtle.setpos(0,y)
     score_turtle.write(arg="SCORE: 0", move=False, align="center", font=FONT)
 
@@ -29,12 +29,16 @@ def make_turtle(x,y):
 
 x_coordinates = [-20,-10,0,10,20]
 y_coordinates = [20,10,0,-10,-20]
-for x in x_coordinates:
-    for y in y_coordinates:
-        make_turtle(x,y)
 
+def setup_turtles():
+    for x in x_coordinates:
+        for y in y_coordinates:
+            make_turtle(x,y)
 
+turtle.tracer(0)
 setup_score_turtle()
+setup_turtles()
+turtle.tracer(1)
 
 
 turtle.mainloop()
