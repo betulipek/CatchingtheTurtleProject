@@ -5,6 +5,7 @@ screen.bgcolor("light blue")
 screen.title("Catching the Turtle")
 FONT = ("Verdana", 15, "bold")
 grid_size = 10
+turtle_list =[]
 
 #Score Turtle
 score_turtle = turtle.Turtle()
@@ -25,6 +26,7 @@ def make_turtle(x,y):
     new_turtle_in_new_structure.shapesize(2,2)
     new_turtle_in_new_structure.color("green")
     new_turtle_in_new_structure.goto(x * grid_size, y * grid_size)
+    turtle_list.append(new_turtle_in_new_structure)
 
 
 x_coordinates = [-20,-10,0,10,20]
@@ -35,9 +37,16 @@ def setup_turtles():
         for y in y_coordinates:
             make_turtle(x,y)
 
+def hide_turtles():
+    for new_turtle_in_new_structure in turtle_list:
+        new_turtle_in_new_structure.hideturtle()
+
 turtle.tracer(0)
+
 setup_score_turtle()
 setup_turtles()
+hide_turtles()
+
 turtle.tracer(1)
 
 
