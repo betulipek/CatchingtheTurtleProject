@@ -27,18 +27,14 @@ def make_turtle(x,y):
     new_turtle_in_new_structure.goto(x * grid_size, y * grid_size)
 
 
+x_coordinates = [-20,-10,0,10,20]
+y_coordinates = [20,10,0,-10,-20]
+for x in x_coordinates:
+    for y in y_coordinates:
+        make_turtle(x,y)
 
 
 setup_score_turtle()
-make_turtle(-20,20)
-make_turtle(-10,20)
-make_turtle(0,20)
-make_turtle(10,20)
-make_turtle(20,20)
-make_turtle(-20,10)
-make_turtle(-10,10)
-make_turtle(0,10)
-make_turtle(10,10)
-make_turtle(20,10)
+
 
 turtle.mainloop()
