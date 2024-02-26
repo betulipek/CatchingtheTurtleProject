@@ -84,16 +84,14 @@ def countdown(time):
         countdown_turtle.write(arg="Game Over !!!", move=False, align="center", font=FONT)
 
 
+def startgame():
+    turtle.tracer(0)
+    setup_score_turtle()
+    setup_turtles()
+    hide_turtles()
+    show_hide_turtles_randomly()
+    countdown(10)
+    turtle.tracer(1)
 
-turtle.tracer(0)
-
-setup_score_turtle()
-setup_turtles()
-hide_turtles()
-show_hide_turtles_randomly()
-countdown(10)
-
-turtle.tracer(1)
-
-
+startgame()
 turtle.mainloop()
