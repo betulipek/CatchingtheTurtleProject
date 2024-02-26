@@ -6,6 +6,7 @@ screen.bgcolor("light blue")
 screen.title("Catching the Turtle")
 FONT = ("Verdana", 15, "bold")
 grid_size = 10
+score = 0
 turtle_list =[]
 
 #Score Turtle
@@ -22,6 +23,14 @@ def setup_score_turtle():
 
 def make_turtle(x,y):
     new_turtle_in_new_structure = turtle.Turtle()
+
+    def handle_click(x,y):
+        global score
+        score += 1
+        score_turtle.clear()
+        score_turtle.write(arg=f"Score: {score}", move=False, align="center", font=FONT)
+
+    new_turtle_in_new_structure.onclick(handle_click)
     new_turtle_in_new_structure.penup()
     new_turtle_in_new_structure.shape("turtle")
     new_turtle_in_new_structure.shapesize(2,2)
