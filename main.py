@@ -2,7 +2,8 @@ import turtle
 import random
 
 screen = turtle.Screen()
-screen.bgcolor("light blue")
+screen.setup(800,600)
+screen.bgpic("underwater.gif")
 screen.title("Catching the Turtle")
 FONT = ("Verdana", 15, "bold")
 grid_size = 10
@@ -90,7 +91,7 @@ def startgame():
     setup_turtles()
     hide_turtles()
     show_hide_turtles_randomly()
-    countdown(10)
+    countdown(20)
     turtle.tracer(1)
 
 startgame()
