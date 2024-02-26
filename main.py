@@ -52,8 +52,9 @@ def hide_turtles():
         new_turtle_in_new_structure.hideturtle()
 
 def show_hide_turtles_randomly():
+    hide_turtles()
     random.choice(turtle_list).showturtle()
-
+    screen.ontimer(show_hide_turtles_randomly,1000)
 
 turtle.tracer(0)
 
