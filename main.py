@@ -7,10 +7,16 @@ screen.title("Catching the Turtle")
 FONT = ("Verdana", 15, "bold")
 grid_size = 10
 score = 0
+
+
 turtle_list =[]
 
 #Score Turtle
 score_turtle = turtle.Turtle()
+
+#Count Down Turtle
+countdown_turtle = turtle.Turtle()
+
 def setup_score_turtle():
     score_turtle.hideturtle()
     score_turtle.color("dark blue")
@@ -56,12 +62,33 @@ def show_hide_turtles_randomly():
     random.choice(turtle_list).showturtle()
     screen.ontimer(show_hide_turtles_randomly,1000)
 
+def countdown(time):
+    countdown_turtle.hideturtle()
+    countdown_turtle.color("brown")
+    countdown_turtle.penup()
+
+    top_height = screen.window_height() / 2
+    y = top_height * 0.85
+    countdown_turtle.setpos(0, 220)
+    countdown_turtle.clear()
+    if time > 0:
+        countdown_turtle.clear()
+        countdown_turtle.write(arg=f"Time: {time}", move=False, align="center", font=FONT)
+        screen.ontimer(lambda : countdown(time-1),1000)
+    else:
+        countdown_turtle.clear()
+        hide_turtles()
+        countdown_turtle.write(arg="Game Over !!!", move=False, align="center", font=FONT)
+
+
+
 turtle.tracer(0)
 
 setup_score_turtle()
 setup_turtles()
 hide_turtles()
 show_hide_turtles_randomly()
+countdown(10)
 
 turtle.tracer(1)
 
